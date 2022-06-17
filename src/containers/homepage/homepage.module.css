@@ -1,0 +1,356 @@
+.main_board {
+    background: url("../../Assets/todo\ intro.jpg") no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.inside_main_board {
+    position: relative;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.819);
+    backdrop-filter: blur(3px);
+    top: 0;
+    width: 100%;
+}
+
+.header {
+    height: 100px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.sidedrawer_toogler {
+    display: none;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 35%;
+    vertical-align: middle;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+.logo span {
+    color: rgb(110, 93, 0);
+    font-size: 1.2em;
+}
+.logo h1 {
+    color: #bbb;
+}
+
+.logo img {
+    height: 80%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.header .nav_section {
+    height: 100%;
+    box-sizing: border-box;
+    width: 60%;
+}
+
+.header .nav_section ul {
+    display: flex;
+    margin-top: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    border-radius: 30px;
+    border-bottom: 3px solid #b8b8b8;
+}
+
+.header .nav_section ul li {
+    list-style-type: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    transition: all 0.2s ease-out;
+}
+.header .nav_section ul li:hover {
+    transform: scale(1.2);
+}
+.header .nav_section ul li i {
+    margin-left: 5px;
+    font-size: 1.4em;
+}
+
+.header .nav_section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.inside_main_board section {
+    position: absolute;
+    height: 85%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inside_main_board section .left_col {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: black; */
+}
+.inside_main_board section .left_col .app_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 70%;
+}
+.inside_main_board section .left_col .app_section button {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+    background-color: transparent;
+    outline: none;
+    border: 3px solid #aaa;
+    font-size: 1.2em;
+    border-radius: 50px;
+    color: white;
+}
+.inside_main_board section .left_col .app_section i {
+    font-size: 2em;
+}
+
+.inside_main_board section .left_col h1 {
+    position: relative;
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.inside_main_board section .left_col .day {
+    color: #bbb;
+}
+.inside_main_board section .left_col .organ{
+    color: rgb(110, 93, 0);
+    font-size: 1.2em;
+}
+.inside_main_board section .left_col p {
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.inside_main_board section .right_col {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+.inside_main_board section .right_col img {
+    height: 90%;
+    width: 90%;
+    margin: 5% 8em 0 0;
+    border-radius: 50%;
+}
+
+@media (max-width: 930px) {
+    .main_board {
+        background: url("../../Assets/todo\ intro.jpg") no-repeat;
+        object-fit: cover;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .inside_main_board {
+        position: relative;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.819);
+        backdrop-filter: blur(3px);
+        top: 0;
+        width: 100%;
+    }
+    
+    .header {
+        height: 100px;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        /* justify-content: space-evenly; */
+        background-color: transparent;
+    }
+
+    .sidedrawer_toogler {
+        display: block;
+        height: 100%;
+        width: 20%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+    .sidedrawer_toogler i {
+        font-size: 3em;
+        position: relative;
+        left: 30px;
+        color: white;
+    }
+    
+    .logo {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 80%;
+        vertical-align: middle;
+        color: white;
+        font-family: 'Lobster', cursive;
+    }
+    .logo span {
+        color: rgb(110, 93, 0);
+        font-size: 1.2em;
+    }
+    .logo h1 {
+        color: #bbb;
+    }
+    
+    .logo img {
+        height: 80%;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .header .nav_section {
+        display: none;
+    }
+    
+    /* .header .nav_section ul {
+        display: flex;
+        margin-top: 0;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+        border-radius: 30px;
+        border-bottom: 3px solid #b8b8b8;
+    }
+    
+    .header .nav_section ul li {
+        list-style-type: none;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 1.5em;
+        transition: all 0.2s ease-out;
+    }
+    .header .nav_section ul li:hover {
+        transform: scale(1.2);
+    }
+    .header .nav_section ul li i {
+        margin-left: 5px;
+        font-size: 1.4em;
+    }
+    
+    .header .nav_section ul li a {
+        text-decoration: none;
+        color: #ffffff;
+    } */
+    
+    .inside_main_board section {
+        position: absolute;
+        height: 85%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .inside_main_board section .left_col {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    
+        /* background-color: black; */
+    }
+    .inside_main_board section .left_col .app_section {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100px;
+        width: 100%;
+    }
+    .inside_main_board section .left_col .app_section button {
+        width: 40%;
+        display: flex;
+        /* justify-content: space-evenly; */
+        align-items: center;
+        height: 70%;
+        background-color: transparent;
+        outline: none;
+        border: 3px solid #aaa;
+        border-radius: 40px;
+        font-size: 1.2em;
+        color: white;
+    }
+    .inside_main_board section .left_col .app_section button:nth-child(2) {
+        width: 40%;
+        display: flex;
+        /* justify-content: space-evenly; */
+        align-items: center;
+        height: 70%;
+        background-color: transparent;
+        outline: none;
+        border: 3px solid #aaa;
+        border-radius: 40px;
+        font-size: 1.2em;
+        color: white;
+    }
+
+    .inside_main_board section .left_col h1 {
+        position: relative;
+        color: white;
+        font-size: 1.7em;
+        text-align: center;
+    }
+    
+    .inside_main_board section .left_col .day {
+        color: #bbb;
+    }
+    .inside_main_board section .left_col .organ{
+        color: rgb(110, 93, 0);
+        font-size: 1em;
+    }
+    .inside_main_board section .left_col p {
+        color: white;
+        position: relative;
+        text-align: center;
+        padding: 1.2em;
+        font-size: 1em;
+        font-weight: 600;
+    }
+    
+    .inside_main_board section .right_col {
+        display: none;
+    }
+}
