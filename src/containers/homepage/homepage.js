@@ -4,6 +4,10 @@ import Aux from "../../hoc/auxi/auxi";
 import classes from "./homepage.module.css";
 import logo_img from '../../Assets/vecteezy_note-book-hand-phone-with-pencil-cartoon-vector-icon_6096482.jpg';
 import col_left_img from '../../Assets/phonebook icon 3.png';
+
+import { NavLink, Outlet } from "react-router-dom";
+
+
 class HomePage extends Component {
   render() {
     return (
@@ -20,11 +24,10 @@ class HomePage extends Component {
             </div>
             <nav className={classes.nav_section}>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Todo'S<i class="fa-solid fa-rectangle-list"></i></a></li>
-                    <li><a href="#">Add<i class="fa-solid fa-plus"></i></a></li>
-                </ul>
+                    <li><NavLink to="/todo">Todo'S<i class="fa-solid fa-rectangle-list"></i></NavLink></li>
+                    </ul>
             </nav>
+            <Outlet />
           </header>
           <section>
             <div className={classes.left_col}>

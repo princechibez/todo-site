@@ -56,7 +56,7 @@
 .header .nav_section {
     height: 100%;
     box-sizing: border-box;
-    width: 60%;
+    width: 40%;
 }
 
 .header .nav_section ul {
@@ -66,8 +66,6 @@
     align-items: center;
     height: 100%;
     width: 80%;
-    border-radius: 30px;
-    border-bottom: 3px solid #b8b8b8;
 }
 
 .header .nav_section ul li {
@@ -295,40 +293,45 @@
     }
     .inside_main_board section .left_col .app_section {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        /* background-color: red; */
         justify-content: space-evenly;
-        height: 100px;
+        height: 12em;
+        position: absolute;
+        bottom: 5em;
         width: 100%;
     }
     .inside_main_board section .left_col .app_section button {
-        width: 40%;
+        width: 60%;
         display: flex;
-        /* justify-content: space-evenly; */
+        justify-content: space-evenly;
         align-items: center;
-        height: 70%;
+        height: 40%;
         background-color: transparent;
         outline: none;
         border: 3px solid #aaa;
         border-radius: 40px;
-        font-size: 1.2em;
+        font-size: 1.3em;
         color: white;
     }
     .inside_main_board section .left_col .app_section button:nth-child(2) {
-        width: 40%;
+        width: 60%;
         display: flex;
-        /* justify-content: space-evenly; */
+        justify-content: space-evenly;
         align-items: center;
-        height: 70%;
+        height: 40%;
         background-color: transparent;
         outline: none;
         border: 3px solid #aaa;
         border-radius: 40px;
-        font-size: 1.2em;
+        font-size: 1.3em;
         color: white;
     }
 
     .inside_main_board section .left_col h1 {
         position: relative;
+        top: -3em;
         color: white;
         font-size: 1.7em;
         text-align: center;
@@ -343,6 +346,7 @@
     }
     .inside_main_board section .left_col p {
         color: white;
+        top: -7em;
         position: relative;
         text-align: center;
         padding: 1.2em;

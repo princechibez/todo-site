@@ -1,0 +1,119 @@
+.todo_Body {
+    position: relative;
+    height: 80vh;
+    width: 45%;
+    margin: auto;
+    bottom: 20%;
+    z-index: 200;
+    display: flex;
+    font-family: Josefin Sans;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: hsl(235, 19%, 35%);
+}
+
+.form_section {
+    box-sizing: border-box;
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+}
+.form_section_lightMode {
+    color: hsl(235, 19%, 35%);
+    background-color: rgb(251, 251, 251);
+}
+.form_section_darkMode {
+    background-color: hsl(235, 24%, 19%);
+}
+.form_section input:nth-child(1) {
+    /* vertical-align: middle; */
+    width: 20%;
+    height: 50%;
+    margin: auto;
+}
+.form_section input:nth-child(2) {
+    width: 80%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Josefin Sans;
+    letter-spacing: 1px;
+}
+.form_section_darkMode input:nth-child(2){
+    color: hsl(234, 39%, 85%);
+}
+.form_section button {
+    margin: 0 5px 0 5px;
+    padding: 7px 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: hsl(234, 71%, 71%);
+    box-shadow: inset 2px 1px 20px hsla(235, 86%, 70%, 0.898);
+}
+.form_section_darkMode button {
+    background-color: hsl(235, 19%, 35%);
+    color: hsl(234, 39%, 85%);
+}
+
+.task_list {
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.task_controllers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background-color: transparent;
+}
+
+.task_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 70%;
+    width: 100%;
+    border-radius: 5px;
+}
+.task_section_lightMode {
+    box-shadow: 2px 1px 20px hsla(235, 19%, 35%, 0.3);
+    background-color: rgb(251, 251, 251);
+}
+.task_section_darkMode {
+    background-color: hsl(235, 24%, 19%);
+}
+
+.bottom_text {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: hsl(236, 9%, 61%);
+    background-color: transparent;
+}
+
+@media (min-width: 200px) and (max-width: 800px) {
+    .todo_Body {
+        position: relative;
+        height: 80vh;
+        width: 75%;
+    }
+    .bottom_text {
+        width: 80%;
+    }
+}

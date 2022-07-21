@@ -1,0 +1,59 @@
+.todo_body {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    font-family: Josefin Sans;
+    /* transition: all 0.5s ease-out; */
+}
+
+.upper_section {
+    letter-spacing: 1.5px;
+    object-fit: contain;
+    height: 30%;
+    width: 100%;
+    transition: all 0.4s ease-out;
+}
+.upper_section_lightMode {
+    background: url("../../Assets/images/bg-desktop-light.jpg") no-repeat;
+}
+.upper_section_darkMode {
+    background: url("../../Assets/images/bg-desktop-dark.jpg") no-repeat;
+}
+
+.cover {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background: linear-gradient(120deg, hsla(192, 100%, 67%, 0.244), hsl(280, 87%, 65%)); */
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+.upper_section div {
+    color: #ffffff;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.lower_section {
+    height: 70%;
+    width: 100%;
+    transition: all 0.8s ease-out;
+}
+.lower_section_lightMode{
+    background-color: rgb(231, 231, 231);
+}
+.lower_section_darkMode {
+    background: hsl(235, 21%, 11%);
+}
+
+.text a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (min-width: 200px) and (max-width: 800px) {
+
+}
