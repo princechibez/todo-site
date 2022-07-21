@@ -7,14 +7,18 @@ import { connect } from "react-redux";
 import * as actionTypes from "../../store/index";
 
 const TodoBody = (props) => {
+  let indexOfSelectedTasks = [];
   let [taskInput, setTaskInput] = useState("");
   let formClasses;
   let taskSectionMode;
+  let todoFunctionClasses;
 
   if (props.displayMode) {
     formClasses = [classes.form_section, classes.form_section_lightMode];
     taskSectionMode = [classes.task_section, classes.task_section_lightMode];
+    todoFunctionClasses = [classes.todo_functions_mobile]
   } else {
+    todoFunctionClasses = [classes.todo_functions_mobile, classes.todo_functions_mobile_dark]
     formClasses = [classes.form_section, classes.form_section_darkMode];
     taskSectionMode = [classes.task_section, classes.task_section_darkMode];
   }
@@ -23,12 +27,30 @@ const TodoBody = (props) => {
     setText();
     setTaskInput("");
   };
+
   const inputChangedHandler = (event) => {
     setTaskInput(event.target.value);
   };
+
   const setText = async () => {
     props.registerTask(taskInput);
   };
+
+  const taskChecked = (taskIndex) => {
+    indexOfSelectedTasks.forEach((ind, index) => {
+      if (ind === taskIndex) {
+        indexOfSelectedTasks.splice(index, 1)
+        return console.log(indexOfSelectedTasks)
+      }
+    })
+      // if (eachIndex === taskIndex) {
+      //   indexOfSelectedTasks = indexOfSelectedTasks.filter(eachIndex => eachIndex !== taskIndex)
+      //   console.log(indexOfSelectedTasks)
+      // }
+    indexOfSelectedTasks.push(taskIndex);
+    console.log(indexOfSelectedTasks)
+    // console.log(indexOfSelectedTasks)
+  }
 
   let tasksDisplayBody;
   if (props.tasks.length === 0) {
@@ -38,10 +60,11 @@ const TodoBody = (props) => {
       flexflow: "column",
       justifyContent: "center",
       alignItems: "center",
-      fontSize: "1.5em",
+      fontSize: "1.2em",
       fontWeight: "bolder",
       color: "hsl(234, 71%, 71%)",
       height: "100%",
+      padding: "10px"
     };
     tasksDisplayBody = (
       <div style={styles}>
@@ -49,8 +72,8 @@ const TodoBody = (props) => {
       </div>
     );
   } else {
-    tasksDisplayBody = props.tasks.map((eachTask) => (
-      <EachTodo displayMode={props.displayMode} text={eachTask} />
+    tasksDisplayBody = props.tasks.map((eachTask, index) => (
+      <EachTodo selector={() => taskChecked(index)} key={index} displayMode={props.displayMode} text={eachTask} />
     ));
   }
 
@@ -68,10 +91,19 @@ const TodoBody = (props) => {
       <div className={taskSectionMode.join(" ")}>
         <div className={classes.task_list}>{tasksDisplayBody}</div>
         <div className={classes.task_controllers}>
-          <p>Blabla</p>
-          <p>Blabla</p>
-          <p>Blabla</p>
+          <div>{props.tasks.length} items</div>
+          <div className={[classes.todo_functions_desktop, classes.desktop].join(" ")}>
+          <p>All</p>
+          <p>Active</p>
+          <p>Completed</p>
+          </div>
+          <div onClick={() => props.clearSelectedTasks(indexOfSelectedTasks)}>clear completed</div>
         </div>
+      </div>
+      <div className={todoFunctionClasses.join(" ")}>
+        <p>All</p>
+        <p>Active</p>
+        <p>Completed</p>
       </div>
       <div className={classes.bottom_text}>
         <h4>Drag and drop to reorder list</h4>
@@ -90,6 +122,7 @@ const mapStatetoProps = (state) => {
 const mapDispatchtoProps = (dispatch) => {
   return {
     registerTask: (taskInput) => dispatch(actionTypes.registerTask(taskInput)),
+    clearSelectedTasks: (taskIndices) => dispatch(actionTypes.selectedTasks(taskIndices))
   };
 };
 

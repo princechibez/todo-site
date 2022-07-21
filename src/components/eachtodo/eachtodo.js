@@ -4,8 +4,10 @@ import classes from "./eachtodo.module.css";
 const EachTodo = (props) => {
   let [radioChecker, setRadioChecker] = useState(false);
   let body_container_classes;
+
   const radioChecktoogler = () => {
     setRadioChecker(!radioChecker);
+    props.selector()
   };
 
   if (props.displayMode) {

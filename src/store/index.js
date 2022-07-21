@@ -3,9 +3,11 @@ export {
 } from "./actions/uiActions";
 
 export {
-    REGISTER_TASK
+    REGISTER_TASK,
+    SELECTED_TASKS
 } from "./actions/taskActions"
 
 export {
-    registerTask
+    registerTask,
+    selectedTasks
 } from "./actions/actionCreators"

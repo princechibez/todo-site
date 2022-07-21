@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./todos.module.css";
 
 import * as actionTypes from "../../store/actions/uiActions";
@@ -11,6 +11,13 @@ import { connect } from "react-redux/es/exports";
 import { NavLink } from "react-router-dom";
 
 const Todo = (props) => {
+    let [disMode, setDisMode] = useState(true);
+
+    useEffect(() => {
+        let mode = JSON.parse(localStorage.getItem("disMode"));
+        setDisMode(mode);
+    })
+
     let upper_section_mode;
     let lower_section_mode;
     if (props.displayMode) {
@@ -19,6 +26,11 @@ const Todo = (props) => {
     } else {
         upper_section_mode = [classes.upper_section, classes.upper_section_darkMode];
         lower_section_mode = [classes.lower_section, classes.lower_section_darkMode]
+    }
+    const toogleMode = () => {
+        setDisMode(!disMode)
+        localStorage.setItem("disMode", JSON.stringify(disMode))
+        console.log(JSON.parse(localStorage.getItem("disMode")))
     }
     return (
         <main className={classes.todo_body}>

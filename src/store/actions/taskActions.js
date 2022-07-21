@@ -1,1 +1,2 @@
 export const REGISTER_TASK = "REGISTER_TASK";
+export const SELECTED_TASKS = "SELECTED_TASKS";

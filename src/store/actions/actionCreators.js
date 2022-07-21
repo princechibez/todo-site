@@ -6,3 +6,10 @@ export const registerTask = (task) => {
         parsedTask: task
     }
 }
+
+export const selectedTasks = (taskIndices) => {
+    return {
+        type: actionTypes.SELECTED_TASKS,
+        taskIndices: taskIndices
+    }
+}
